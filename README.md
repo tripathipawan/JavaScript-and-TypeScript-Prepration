@@ -73,7 +73,7 @@ JS With TS/
 | Day 6 | String Methods | 6 JS + 6 TS | 4/6 | 1.5/6 | ✅ Done |
 | Day 7 | Math & Numbers | 6 JS + 6 TS | 4/6 | 3/6 | ✅ Done |
 | Day 8 | Week 1 Full Revision | 6 JS + 6 TS | 3.5/6 | 2.5/6 | ✅ Done |
-| Day 9 | Arrays Basics | — | — | — | ⬜ Pending |
+| Day 9 | Arrays Basics | 6 JS + 6 TS | 2/6 | 1/6 | ✅ Done |
 | Day 10 | Array Methods | — | — | — | ⬜ Pending |
 | Day 11 | Objects Basics | — | — | — | ⬜ Pending |
 | Day 12 | Object Methods | — | — | — | ⬜ Pending |
@@ -145,7 +145,6 @@ JS With TS/
 - `indexOf()` — find position of substring
 - `length` — string length
 - `split("").reverse().join("")` — palindrome technique
-- TypeScript: string methods work the same, types enforced on parameters and returns
 
 ### Day 7 — Math & Numbers
 - `Math.round()`, `Math.floor()`, `Math.ceil()` — rounding methods
@@ -154,25 +153,33 @@ JS With TS/
 - `Math.pow()` — power / exponent
 - `Math.sqrt()` — square root
 - `Math.PI` — pi constant
-- `Math.random()` — random number formula: `Math.floor(Math.random() * (max - min + 1)) + min`
+- `Math.random()` — random number formula
 - `parseInt()`, `parseFloat()`, `Number()` — string to number conversion
 - `isNaN()` — check if value is not a number
-- `toFixed(n)` — round to n decimal places (returns string — use `Number()` to convert back)
+- `toFixed(n)` — round to n decimal places (returns string)
 - Floating point precision issue: `0.1 + 0.2 !== 0.3`
-- TypeScript: `type Stats = {}` — type alias for object shape
 
 ### Day 8 — Week 1 Full Revision
 - `typeof typeof 42` = `"string"` — interview trick question
 - `null == undefined` is `true` — loose equality special rule
-- `null === undefined` is `false` — strict equality fails (different types)
-- `??` vs `||` difference revisited — `??` only reacts to null/undefined
 - FizzBuzz — check FizzBuzz condition FIRST before Fizz or Buzz
 - Closure concept — inner functions remember outer function variables
 - `slugify` — `trim + toLowerCase + split + filter + join` pattern
 - OTP generation — loop `length` times, add one digit per iteration
-- TypeScript: `type` alias must be defined BEFORE it is used
-- TypeScript: `push(String(i))` — convert number to string when array is `string[]`
-- TypeScript: `unknown` still requires type check before calling methods
+
+### Day 9 — Arrays Basics
+- Array creation and index access — starts from 0
+- `arr[arr.length - 1]` — always safe way to get last element
+- `push()` — add to end | `pop()` — remove from end (no argument)
+- `unshift()` — add to start | `shift()` — remove from start (no argument)
+- `Array.isArray()` — check if something is an array
+- Finding max/min with a for loop — start with first element, compare each
+- `arr.includes(val)` — check if value exists in array
+- `arr.slice(start, end)` — extract portion without modifying original
+- Nested loops — flattening nested arrays
+- TypeScript: `number[]` vs `number` — array type vs single value type
+- TypeScript: `number[][]` — array of arrays
+- TypeScript Generics: `<T>` — makes functions work for any type
 
 ---
 
@@ -201,10 +208,15 @@ JS With TS/
 | `toFixed()` returns string | Day 7 |
 | Spread with Math.max/min | Day 7 |
 | `type` alias for objects | Day 7 + Day 8 |
-| `typeof typeof` trick | Day 8 |
 | FizzBuzz logic order | Day 8 |
-| OTP generation with loop | Day 8 |
-| slugify pattern | Day 8 |
+| Array index access | Day 9 |
+| push, pop, shift, unshift | Day 9 |
+| `arr.includes()` | Day 9 |
+| `arr.slice()` | Day 9 |
+| Finding max/min with loop | Day 9 |
+| TypeScript `number[]` vs `number` | Day 9 |
+| TypeScript `number[][]` | Day 9 |
+| TypeScript Generics `<T>` | Day 9 |
 
 ---
 
@@ -220,13 +232,12 @@ JS With TS/
 - `Math.max(array)` does not work — use `Math.max(...array)` with spread
 - `Math.parseInt` does not exist — `parseInt` is a global function
 - `toFixed()` returns a string — wrap with `Number()` if number type is needed
-- `0.1 + 0.2 === 0.3` is false — never compare floats directly in JavaScript
-- `typeof typeof 42` is `"string"` not `"number"` — typeof always returns a string
-- `null == undefined` is `true` — special loose equality rule
-- Return `0` for free tickets, not the string `"Free"` — match the return type
-- `unknown` type still requires type check before calling any methods
-- `type` alias must be defined before the function that uses it
-- In FizzBuzz, always check `i % 3 === 0 && i % 5 === 0` FIRST
+- `0.1 + 0.2 === 0.3` is false — never compare floats directly
+- `typeof typeof 42` is `"string"` not `"number"`
+- `pop()` and `shift()` take NO arguments — they always remove one element
+- `number[]` means array of numbers — `number` means a single number
+- `isArray: boolean = [true, false]` is wrong — `Array.isArray()` returns a single boolean
+- Finding max/min needs a variable tracker — comparing adjacent elements is wrong
 
 ---
 
@@ -246,5 +257,5 @@ JS With TS/
 **Name:** Pawan Tripathi
 **Goal:** Frontend / Fullstack Developer
 **Started:** Day 1 — Variables & Data Types
-**Current Day:** Day 8 — Week 1 Full Revision
-**Total Tasks Completed:** 71 JS + 71 TS = 142 tasks
+**Current Day:** Day 9 — Arrays Basics
+**Total Tasks Completed:** 77 JS + 77 TS = 154 tasks
